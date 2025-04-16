@@ -82,8 +82,12 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(msg => {
           if (msg === 'success') {
             successMessage.style.display = 'block';
-            form.reset();
-            setTimeout(() => successMessage.style.display = 'none', 3000);
+            
+        // Hide message after 10 seconds
+          setTimeout(() => {
+            successMessage.style.display = 'none';
+            form.reset(); // Reset form after 10 seconds
+          }, 10000);
           } else {
             alert('Error: ' + msg);
           }
